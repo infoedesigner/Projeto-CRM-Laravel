@@ -1,0 +1,26 @@
+{
+  "cpf" : "03217770420",
+  "beneficios" : [ {
+    "beneficio" : "6049438408",
+    "nome" : "MARIA AUGUSTA DE SOUZA",
+    "dataNascimento" : "1972-08-20",
+    "dib" : "2013-03-23",
+    "especie" : {
+      "codigo" : "87",
+      "descricao" : "AMP. SOCIAL PESSOA PORTADORA DEFICIENCIA"
+    },
+    "situacao" : "ATIVO"
+  } ],
+  "resultInfo" : {
+    "timestamp" : "2022-10-27T18:55:43.471Z",
+    "queryTime" : 234,
+    "requestId" : "0a77978a9480a2fa"
+  },
+  "billingInfo" : {
+    "value" : 0.03,
+    "charged" : true,
+    "balance" : 298.38000000000005,
+    "balanceValidUntil" : "2022-11-15T00:00:00.000-0300",
+    "subscriptionId" : "1gm0ehz9ykd1r"
+  }
+}

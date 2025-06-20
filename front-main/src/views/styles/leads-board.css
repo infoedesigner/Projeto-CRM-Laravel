@@ -1,0 +1,50 @@
+.content-kanban {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 100vh;
+}
+
+.kanban-card {
+    border: rgba(147, 147, 147, 0.3) 1px solid;
+    width: 250px !important;
+    min-width: 250px;
+    max-width: 250px !important;
+}
+
+.react-kanban-column {
+    border-radius: 10px;
+    margin: 0 10px 10px 0;
+    padding: 15px;
+    width: 280px;
+    border: rgba(147, 147, 147, 0.2) 1px solid;
+}
+
+.react-kanban-card {
+    background-color: white;
+    color: #ccc;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    padding: 10px;
+    width: 260px;
+    margin-bottom: 7px;
+    border: rgba(147, 147, 147, 0.4) 1px solid;
+}
+
+.react-kanban-card__title {
+    font-family: Nunito;
+    font-weight: bold;
+}
+
+.react-kanban-card--dragging {
+    transform: rotate(3deg);
+    background-color: #e3e3e3;
+    color: #ccc;
+    min-width: 100%;
+    width: 100%;
+}
+
+.react-kanban-column-header {
+    font-family: Nunito;
+    font-weight: bold;
+    padding-bottom: 10px;
+}

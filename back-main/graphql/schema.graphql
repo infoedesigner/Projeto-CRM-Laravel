@@ -1,0 +1,255 @@
+"""
+Add a dynamically client-controlled WHERE condition to a fields query.
+"""
+directive @whereConditions(
+    """
+    Restrict the allowed column names to a well-defined list.
+    This improves introspection capabilities and security.
+    Mutually exclusive with the `columnsEnum` argument.
+    """
+    columns: [String!]
+
+    """
+    Use an existing enumeration type to restrict the allowed columns to a predefined list.
+    This allowes you to re-use the same enum for multiple fields.
+    Mutually exclusive with the `columns` argument.
+    """
+    columnsEnum: String
+
+    """
+    Reference a method that applies the client given conditions to the query builder.
+
+    Expected signature: `(
+    \Illuminate\Database\Query\Builder|\Illuminate\Database\Eloquent\Builder $builder,
+    array<string, mixed> $whereConditions
+    ): void`
+
+    Consists of two parts: a class name and a method name, separated by an `@` symbol.
+    If you pass only a class name, the method name defaults to `__invoke`.
+    """
+    handler: String = "\\Nuwave\\Lighthouse\\WhereConditions\\WhereConditionsHandler"
+) on ARGUMENT_DEFINITION
+
+scalar Date @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date")
+
+type Apis {
+    id: ID!
+    api_name: String!
+    api_host: String!
+    api_login: String
+    api_secret: String!
+    api_auth_method: String!
+    api_call_method: String!
+    status: Boolean
+}
+type BeneficiosCpf {
+    id: ID!
+    cpf: String!
+    beneficio: String!
+    nome: String!
+    especie: String
+    descricao_especie: String
+}
+type Cliente {
+    id: ID!
+    nome: String
+    cpf: String
+    data_nascimento: Date
+    logradouro: String
+    numero: String
+    complemento: String
+    bairro: String
+    cidade: String
+    cep: String
+    estado: String
+    genero: Boolean
+    obito: Boolean
+    status: Boolean
+}
+type ConsultaCredito {
+    id: ID!
+    user_id: ID
+    cpf: String
+    json_response: String
+    code_response: String
+    provider: String
+    uuid: String
+    created_at: Date
+    status: Boolean
+}
+type EsteiraPropostas {
+    id: ID!
+    user_id: ID
+    id_produto: Int
+    id_banco: Int
+    id_cliente: Int
+    data_abertura: String
+    n_proposta: String
+    beneficio: String
+    valor: Float
+    valor_liberado: Float
+    n_contrato: String
+    status: Boolean
+}
+type FailedJobs {
+    id: ID!
+    uuid: String!
+    connection: String!
+    queue: String!
+    payload: String!
+    exception: String!
+}
+type Lead {
+    id: ID!
+    nome: String
+    cpf: String
+    celular: String
+    email: String
+    cidade: String
+    uf: String
+    valor_disponivel: Float
+    idade: Int!
+    status: Boolean
+    canal: String
+}
+type Migrations {
+    id: ID!
+    migration: String!
+    batch: Int!
+}
+type PasswordResets {
+    email: String!
+    token: String!
+}
+type PersonalAccessTokens {
+    id: ID!
+    tokenable_type: String!
+    tokenable_id: ID!
+    name: String!
+    token: String!
+    abilities: String
+}
+type Produto {
+    id: ID!
+    produto: String!
+    descricao: String!
+    banco: String!
+}
+type RegrasNegocio {
+    id: ID!
+    regra: String!
+    range_inicial: String!
+    range_final: String!
+    tipo: Float!
+}
+type RegrasNegocioProduto {
+    id: ID!
+    id_produto: Int!
+    id_regra_negocio: Int!
+    valor: String!
+}
+type User {
+    id: ID!
+    name: String!
+    email: String!
+    password: String!
+    admin: Boolean
+    remember_token: String
+}
+
+type Banco {
+    id: ID!
+    nome_banco: String!
+}
+
+type Query {
+    #query {
+    #	getUser(where: { column: NAME, operator: LIKE, value: "%pedro%" }){
+    #    name
+    #  }
+    #}
+    getUser(
+        where: _ @whereConditions(columns: ["name", "email"])
+    ): [User!]! @all
+
+    #query {
+    #  allUser {
+    #    paginatorInfo {
+    #      total
+    #    }
+    #    data {
+    #      name
+    #    }
+    #  }
+    #}
+    allUser: [User]! @paginate(defaultCount: 50)
+
+    allRegras: [RegrasNegocio]! @paginate(defaultCount: 50)
+    getRegras(
+        where: _ @whereConditions(columns: ["regra", "tipo"])
+    ): [RegrasNegocio!]! @all
+
+    allLeads: [Lead]! @paginate(defaultCount: 50)
+    getLeads(
+        where: _ @whereConditions(columns: ["nome", "cpf", "celular", "email", "cidade", "uf", "valor_disponivel", "idade", "status", "canal"])
+    ): [Lead!]! @all
+
+    allProdutos: [Produto]! @paginate(defaultCount: 50)
+    getProdutos(
+        where: _ @whereConditions(columns: ["produto", "descricao", "banco"])
+    ): [Produto!]! @all
+
+    allProcessamentos: [ConsultaCredito]! @paginate(defaultCount: 50)
+    getProcessamentos(
+        where: _ @whereConditions(columns: ["user_id","cpf", "status","code_response","uuid"])
+    ): [ConsultaCredito!]! @all
+
+    allProdutos: [Produto]! @paginate(defaultCount: 50)
+    getProdutos(
+        where: _ @whereConditions(columns: ["id", "produto", "descricao"])
+    ): [Produto!]! @all
+
+    allBancos: [Banco]! @paginate(defaultCount: 50)
+    getBancos(
+        where: _ @whereConditions(columns: ["id", "nome_banco"])
+    ): [Banco!]! @all
+
+}
+
+
+type Mutation {
+    createUser(
+        name: String
+        email: String
+        password: String
+    ): User! @create
+
+    createLead(
+        nome: String
+        cpf: String
+        celular: String
+        email: String
+        cidade: String
+        uf: String
+        valor_disponivel: Float
+        idade: Int
+        status: Boolean
+        canal: String
+    ):Lead!@create
+
+    updateLead(
+        id:ID!
+        nome: String
+        cpf: String
+        celular: String
+        email: String
+        cidade: String
+        uf: String
+        valor_disponivel: Float
+        idade: Int
+        status: Boolean
+        canal: String
+    ):Lead!@create
+}
+
+

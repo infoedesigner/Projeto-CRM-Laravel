@@ -1,0 +1,13 @@
+.map-container {
+    height: 600px;
+    width: 100%;
+    border-radius: 15px;
+}
+
+.mapboxgl-ctrl-attrib-inner {
+    display: none;
+}
+
+.mapboxgl-canvas {
+    left: 0;
+}

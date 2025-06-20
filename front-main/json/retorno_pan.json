@@ -1,0 +1,186 @@
+{
+    "condicoes_credito": [
+        {
+            "sucesso": true,
+            "mensagem_erro": "",
+            "prazo": 4,
+            "codigo_tabela_financiamento": "900001",
+            "descricao_tabela_financiamento": "FGTS_CORBAN",
+            "codigo_produto": "000025",
+            "descricao_produto": "FGTS",
+            "despesas": [
+                {
+                    "codigo": 78,
+                    "grupo": "SEGURO",
+                    "financiada": false,
+                    "tipo": 7,
+                    "inclusa": false,
+                    "numero_item": 5,
+                    "valor_calculado": 75.0
+                }
+            ],
+            "parcelas": [
+                {
+                    "num_parcela": "1",
+                    "valor_parcela": 83.1,
+                    "data_vencimento": "01/05/2023"
+                },
+                {
+                    "num_parcela": "2",
+                    "valor_parcela": 1026.01,
+                    "data_vencimento": "01/05/2024"
+                },
+                {
+                    "num_parcela": "3",
+                    "valor_parcela": 718.21,
+                    "data_vencimento": "01/05/2025"
+                },
+                {
+                    "num_parcela": "4",
+                    "valor_parcela": 149.87,
+                    "data_vencimento": "01/05/2026"
+                }
+            ],
+            "taxa_apropriacao_anual": 27.422309590026806,
+            "taxa_apropriacao_mensal": 2.040001436335337,
+            "taxa_cet_anual": 30.1957,
+            "taxa_cet_mensal": 2.1925,
+            "taxa_referencia_anual": 27.4223,
+            "taxa_referencia_mensal": 2.04,
+            "valor_bruto": 1977.19,
+            "valor_cliente": 1200.0,
+            "valor_financiado": 1240.69,
+            "valor_solicitado": 1200.0,
+            "valor_iof": 40.69,
+            "valor_liquido": 1200.0,
+            "tipo_simulacao": "ValorSolicitado"
+        },
+        {
+            "sucesso": true,
+            "mensagem_erro": "",
+            "prazo": 4,
+            "codigo_tabela_financiamento": "900006",
+            "descricao_tabela_financiamento": "FGTS_CORBAN_FLEX1",
+            "codigo_produto": "000025",
+            "descricao_produto": "FGTS",
+            "despesas": [
+                {
+                    "codigo": 78,
+                    "grupo": "SEGURO",
+                    "financiada": false,
+                    "tipo": 7,
+                    "inclusa": false,
+                    "numero_item": 5,
+                    "valor_calculado": 75.0
+                }
+            ],
+            "parcelas": [
+                {
+                    "num_parcela": "1",
+                    "valor_parcela": 83.1,
+                    "data_vencimento": "01/05/2023"
+                },
+                {
+                    "num_parcela": "2",
+                    "valor_parcela": 1026.01,
+                    "data_vencimento": "01/05/2024"
+                },
+                {
+                    "num_parcela": "3",
+                    "valor_parcela": 718.21,
+                    "data_vencimento": "01/05/2025"
+                },
+                {
+                    "num_parcela": "4",
+                    "valor_parcela": 118.3,
+                    "data_vencimento": "01/05/2026"
+                }
+            ],
+            "taxa_apropriacao_anual": 26.674909333246298,
+            "taxa_apropriacao_mensal": 1.9899902288360138,
+            "taxa_cet_anual": 29.441,
+            "taxa_cet_mensal": 2.1437,
+            "taxa_referencia_anual": 26.6751,
+            "taxa_referencia_mensal": 1.99,
+            "valor_bruto": 1945.62,
+            "valor_cliente": 1200.0,
+            "valor_financiado": 1240.69,
+            "valor_solicitado": 1200.0,
+            "valor_iof": 40.69,
+            "valor_liquido": 1200.0,
+            "tipo_simulacao": "ValorSolicitado"
+        },
+        {
+            "sucesso": false,
+            "mensagem_erro": "Valor da Operação não pode ser menor que o valor mínimo cadastrado. Valor mínimo: 3000 ",
+            "prazo": 0,
+            "codigo_tabela_financiamento": "900007",
+            "descricao_tabela_financiamento": "FGTS_CORBAN_FLEX2",
+            "codigo_produto": "000025",
+            "descricao_produto": "FGTS",
+            "despesas": [],
+            "parcelas": [],
+            "taxa_apropriacao_anual": 0.0,
+            "taxa_apropriacao_mensal": 0.0,
+            "taxa_cet_anual": 0.0,
+            "taxa_cet_mensal": 0.0,
+            "taxa_referencia_anual": 0.0,
+            "taxa_referencia_mensal": 0.0,
+            "valor_bruto": 0.0,
+            "valor_cliente": 0.0,
+            "valor_financiado": 0.0,
+            "valor_solicitado": 0.0,
+            "valor_iof": 0.0,
+            "valor_liquido": 0.0,
+            "tipo_simulacao": "NaoDefinido"
+        },
+        {
+            "sucesso": false,
+            "mensagem_erro": "Valor da Operação não pode ser menor que o valor mínimo cadastrado. Valor mínimo: 6000 ",
+            "prazo": 0,
+            "codigo_tabela_financiamento": "900008",
+            "descricao_tabela_financiamento": "FGTS_CORBAN_FLEX3",
+            "codigo_produto": "000025",
+            "descricao_produto": "FGTS",
+            "despesas": [],
+            "parcelas": [],
+            "taxa_apropriacao_anual": 0.0,
+            "taxa_apropriacao_mensal": 0.0,
+            "taxa_cet_anual": 0.0,
+            "taxa_cet_mensal": 0.0,
+            "taxa_referencia_anual": 0.0,
+            "taxa_referencia_mensal": 0.0,
+            "valor_bruto": 0.0,
+            "valor_cliente": 0.0,
+            "valor_financiado": 0.0,
+            "valor_solicitado": 0.0,
+            "valor_iof": 0.0,
+            "valor_liquido": 0.0,
+            "tipo_simulacao": "NaoDefinido"
+        },
+        {
+            "sucesso": false,
+            "mensagem_erro": "Valor da Operação não pode ser menor que o valor mínimo cadastrado. Valor mínimo: 6000 ",
+            "prazo": 0,
+            "codigo_tabela_financiamento": "900009",
+            "descricao_tabela_financiamento": "FGTS_CORBAN_FLEX4",
+            "codigo_produto": "000025",
+            "descricao_produto": "FGTS",
+            "despesas": [],
+            "parcelas": [],
+            "taxa_apropriacao_anual": 0.0,
+            "taxa_apropriacao_mensal": 0.0,
+            "taxa_cet_anual": 0.0,
+            "taxa_cet_mensal": 0.0,
+            "taxa_referencia_anual": 0.0,
+            "taxa_referencia_mensal": 0.0,
+            "valor_bruto": 0.0,
+            "valor_cliente": 0.0,
+            "valor_financiado": 0.0,
+            "valor_solicitado": 0.0,
+            "valor_iof": 0.0,
+            "valor_liquido": 0.0,
+            "tipo_simulacao": "NaoDefinido"
+        }
+    ]
+}
