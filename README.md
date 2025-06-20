@@ -2,6 +2,8 @@
 
 Sistema de gerenciamento de relacionamento com clientes (CRM) voltado para controle financeiro, desenvolvido com o framework **Laravel**.
 
+Desenvolvedor: André Luiz de Souza Silveira
+
 ---
 
 ## 🚀 Requisitos
